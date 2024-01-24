@@ -1,9 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Title Here</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Republic Day 2024</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #countdown {
+      font-size: 36px;
+      text-align: center;
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
+  <h1>Coming Soon</h1>
+  <div id="countdown"></div>
+
+  <script>
+    // Set the date we're counting down to
+    const countDownDate = new Date("Jan 26, 2024 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const countdownElement = document.getElementById("countdown");
+    
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    // Initial call to display the countdown immediately
+    updateCountdown();
+
+    // Update the countdown every 1 second
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
 <script>
 function myFunction() {
     // Get the current URL
@@ -71,5 +129,3 @@ function myFunction() {
 }
 window.addEventListener('load', myFunction);
 </script>
-</body>
-</html>
